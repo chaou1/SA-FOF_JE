@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,9 @@ public class player : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "death") { GameObject.Destroy(this.gameObject); }
     }
 }
