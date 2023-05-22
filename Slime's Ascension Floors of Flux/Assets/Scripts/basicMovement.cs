@@ -39,7 +39,10 @@ public class basicMovement : MonoBehaviour
             rb.velocity= new Vector2(movement.x, rb.velocity.y);
             movement.x = 0;
         }
+
     }
+
+
 
 
     public Vector2 Charging() {
