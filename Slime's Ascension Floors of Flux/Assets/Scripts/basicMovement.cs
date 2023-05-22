@@ -98,7 +98,7 @@ public class basicMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "ground") 
+        if (collision.collider.tag == "grounded") 
         {
             cmidairJump = midairJump;
         }
