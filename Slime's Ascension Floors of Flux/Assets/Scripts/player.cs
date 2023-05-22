@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    basicMovement basicmovement;
+    public basicMovement basicmovement;
     
     public float stamina=50;
     
