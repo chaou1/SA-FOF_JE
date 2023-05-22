@@ -31,30 +31,33 @@ public class basicMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (midairJump != 0)
+        if (cmidairJump != 0)
         {
             movement = Charging();
         }
     }
  void Update()
     {
-        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge)
+
+        if (cmidairJump != 0)
         {
+            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge)
+            {
 
-            rb.velocity = new Vector2(rb.velocity.x, movement.y);
-            movement.y = 0;
-            dashSound.Play();
-            cmidairJump--;
+                rb.velocity = new Vector2(rb.velocity.x, movement.y);
+                movement.y = 0;
+                dashSound.Play();
+                cmidairJump--;
 
+            }
+            if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
+            {
+                rb.velocity = new Vector2(movement.x, rb.velocity.y);
+                movement.x = 0;
+                dashSound.Play();
+                cmidairJump--;
+            }
         }
-        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
-        {
-            rb.velocity = new Vector2(movement.x, rb.velocity.y);
-            movement.x = 0;
-            dashSound.Play();
-            cmidairJump--;
-        }
-
         //Slow Motion
         if (Input.GetKey(KeyCode.Space))
         {
