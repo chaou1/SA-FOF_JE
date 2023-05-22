@@ -543,6 +543,8 @@ MonoBehaviour:
   minCharge: 0
   slowdown: 0
   dashSound: {fileID: 930351521}
+  midairJump: 0
+  cmidairJump: 0
 --- !u!50 &930351516
 Rigidbody2D:
   serializedVersion: 4
@@ -643,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210353f6dfc9d654ba39fde39d8a3404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicmovement: {fileID: 930351515}
   stamina: 50
 --- !u!82 &930351521
 AudioSource:
