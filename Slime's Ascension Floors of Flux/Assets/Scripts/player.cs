@@ -5,7 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public basicMovement basicmovement;
-    
+    public float maxStamina=50;
     public float stamina=50;
     
     // Start is called before the first frame update
@@ -26,6 +26,17 @@ public class player : MonoBehaviour
         if (collision.collider.tag == "death") { GameObject.Destroy(this.gameObject); }
     }
     public void staminaCountdown() {
-        stamina = stamina - 0.1f;
+        while (stamina >= 0f) { 
+            stamina = stamina - 0.4f; 
+       }
+        if (stamina == 0) {
+            basicmovement.slowdown = false;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "grounded"&& stamina<=maxStamina) {
+            stamina = stamina + 0.4f;
+        }
     }
 }
