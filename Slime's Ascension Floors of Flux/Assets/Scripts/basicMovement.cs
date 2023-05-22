@@ -10,6 +10,8 @@ public class basicMovement : MonoBehaviour
     public float force;
     public Transform playerposition;
     public Vector2 movement;
+    public float chargeX;
+    public float chargeY;
 
     public float maxCharge=20;
 
@@ -44,27 +46,27 @@ public class basicMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W)& movement.y<= maxCharge)
             {
-                movement.y = movement.y + 0.01f;
+                movement.y = movement.y + chargeY;
                 
             }
-            if (Input.GetKey(KeyCode.S) & movement.y <= maxCharge)
+            if (Input.GetKey(KeyCode.S) & movement.y >= -maxCharge)
             {
-                movement.y = movement.y - 0.01f;
+                movement.y = movement.y - chargeY;
                 
         }
-            if (Input.GetKey(KeyCode.A) & movement.x <= maxCharge)
+            if (Input.GetKey(KeyCode.A) & movement.x >= -maxCharge)
             {
-                movement.x = movement.x  -0.01f;
+                movement.x = movement.x  - chargeX;
                 
         }
             if (Input.GetKey(KeyCode.D) & movement.x <= maxCharge)
             {
-                movement.x = movement.x +0.01f;
+                movement.x = movement.x + chargeX;
                
         }
         
 
         return movement;
     }
-
+    
 }
