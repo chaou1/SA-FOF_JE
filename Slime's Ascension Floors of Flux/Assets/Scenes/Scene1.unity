@@ -502,9 +502,9 @@ MonoBehaviour:
   force: 0
   playerposition: {fileID: 0}
   movement: {x: 0, y: 0}
-  chargeX: 0.1
-  chargeY: 0.1
-  maxCharge: 20
+  chargeX: 1.2
+  chargeY: 1.2
+  maxCharge: 40
 --- !u!50 &1413548587
 Rigidbody2D:
   serializedVersion: 4
@@ -518,9 +518,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
+  m_LinearDrag: 5
   m_AngularDrag: 0
-  m_GravityScale: 4
+  m_GravityScale: 4.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
