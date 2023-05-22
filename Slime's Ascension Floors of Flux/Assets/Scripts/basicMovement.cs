@@ -12,13 +12,16 @@ public class basicMovement : MonoBehaviour
     public Vector2 movement;
     public float chargeX;
     public float chargeY;
-
-    public float maxCharge=20;
+    public float slowmotionFactor;
+    float deltaTime;
+    public float maxCharge;
+    public float minCharge;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        deltaTime = Time.deltaTime;
         Transform playerposition = player.transform;
     }
 
@@ -32,21 +35,32 @@ public class basicMovement : MonoBehaviour
     }
  void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge)
         {
 
             rb.velocity = new Vector2(rb.velocity.x, movement.y);
             movement.y = 0;
 
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
         {
             rb.velocity = new Vector2(movement.x, rb.velocity.y);
             movement.x = 0;
         }
+
+        //Slow Motion
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Time.timeScale = slowmotionFactor;
+            Time.fixedDeltaTime = Time.timeScale * 0.02f;
+        }
+        else {
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = deltaTime;
+        }
     }
 
-
+    //Charging the Movement
     public Vector2 Charging() {
 
             if (Input.GetKey(KeyCode.W)& movement.y<= maxCharge)
