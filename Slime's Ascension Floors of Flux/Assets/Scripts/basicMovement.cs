@@ -17,6 +17,7 @@ public class basicMovement : MonoBehaviour
     public float maxCharge;
     public float minCharge;
     public bool slowdown = false;
+    public AudioSource dashSound;
 
 
     // Start is called before the first frame update
@@ -39,12 +40,14 @@ public class basicMovement : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x, movement.y);
             movement.y = 0;
+            dashSound.Play();
 
         }
         if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
         {
             rb.velocity = new Vector2(movement.x, rb.velocity.y);
             movement.x = 0;
+            dashSound.Play();
         }
 
         //Slow Motion
