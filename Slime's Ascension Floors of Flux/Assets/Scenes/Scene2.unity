@@ -485,7 +485,6 @@ GameObject:
   - component: {fileID: 930351514}
   - component: {fileID: 930351519}
   - component: {fileID: 930351521}
-  - component: {fileID: 930351520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -542,6 +541,8 @@ MonoBehaviour:
   slowmotionFactor: 0.2
   maxCharge: 40
   minCharge: 0
+  slowdown: 0
+  dashSound: {fileID: 930351521}
 --- !u!50 &930351516
 Rigidbody2D:
   serializedVersion: 4
@@ -642,14 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210353f6dfc9d654ba39fde39d8a3404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &930351520
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930351513}
-  m_Enabled: 1
+  stamina: 50
 --- !u!82 &930351521
 AudioSource:
   m_ObjectHideFlags: 0
