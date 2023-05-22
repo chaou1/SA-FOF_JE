@@ -23,25 +23,28 @@ public class basicMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         movement=Charging();
         
+        
+
+    }
+ void Update()
+    {
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
         {
-         
-            rb.velocity=new Vector2(rb.velocity.x,movement.y);
+
+            rb.velocity = new Vector2(rb.velocity.x, movement.y);
             movement.y = 0;
- 
+
         }
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            rb.velocity= new Vector2(movement.x, rb.velocity.y);
+            rb.velocity = new Vector2(movement.x, rb.velocity.y);
             movement.x = 0;
         }
-
     }
- 
 
 
     public Vector2 Charging() {
