@@ -18,11 +18,12 @@ public class basicMovement : MonoBehaviour
     public float minCharge;
     public bool slowdown = false;
     public AudioSource dashSound;
-
-
+    public float midairJump;
+    public float cmidairJump;
     // Start is called before the first frame update
     void Start()
     {
+        cmidairJump = midairJump;
         deltaTime = Time.deltaTime;
         Transform playerposition = player.transform;
     }
@@ -30,8 +31,10 @@ public class basicMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        movement=Charging();
-
+        if (midairJump != 0)
+        {
+            movement = Charging();
+        }
     }
  void Update()
     {
@@ -41,6 +44,7 @@ public class basicMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, movement.y);
             movement.y = 0;
             dashSound.Play();
+            cmidairJump--;
 
         }
         if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
@@ -48,6 +52,7 @@ public class basicMovement : MonoBehaviour
             rb.velocity = new Vector2(movement.x, rb.velocity.y);
             movement.x = 0;
             dashSound.Play();
+            cmidairJump--;
         }
 
         //Slow Motion
@@ -91,5 +96,11 @@ public class basicMovement : MonoBehaviour
 
         return movement;
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "ground") 
+        {
+            cmidairJump = midairJump;
+        }
+    }
 }
