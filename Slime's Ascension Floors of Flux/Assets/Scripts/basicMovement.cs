@@ -16,6 +16,7 @@ public class basicMovement : MonoBehaviour
     float deltaTime;
     public float maxCharge;
     public float minCharge;
+    public bool slowdown = false;
 
 
     // Start is called before the first frame update
@@ -29,8 +30,6 @@ public class basicMovement : MonoBehaviour
     void FixedUpdate()
     {
         movement=Charging();
-        
-        
 
     }
  void Update()
@@ -53,10 +52,12 @@ public class basicMovement : MonoBehaviour
         {
             Time.timeScale = slowmotionFactor;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
+            slowdown = true;
         }
         else {
             Time.timeScale = 1;
             Time.fixedDeltaTime = deltaTime;
+            slowdown = false;
         }
     }
 
