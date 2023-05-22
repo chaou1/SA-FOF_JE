@@ -17,9 +17,13 @@ public class basicMovement : MonoBehaviour
     public float maxCharge;
     public float minCharge;
     public bool slowdown = false;
+    public bool noStamina = false;
     public AudioSource dashSound;
     public float midairJump;
     public float cmidairJump;
+    public float maxStamina = 40;
+    public float stamina = 40;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,11 @@ public class basicMovement : MonoBehaviour
         {
             movement = Charging();
         }
+        if (slowdown == true)
+        {
+            staminaCountdown();
+        }
+
     }
  void Update()
     {
@@ -59,7 +68,7 @@ public class basicMovement : MonoBehaviour
             }
         }
         //Slow Motion
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) & noStamina == false)
         {
             Time.timeScale = slowmotionFactor;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
@@ -104,6 +113,26 @@ public class basicMovement : MonoBehaviour
         if (collision.collider.tag == "grounded") 
         {
             cmidairJump = midairJump;
+            stamina = maxStamina;
+            noStamina = false;
+        }
+
+    }
+
+
+    //stamina
+
+    public void staminaCountdown()
+    {   
+        if (stamina > 0f)
+        {
+            stamina = stamina - 0.2f;
+            
+        }
+        if (stamina <= 0)
+        {
+           noStamina = true;
         }
     }
+
 }
