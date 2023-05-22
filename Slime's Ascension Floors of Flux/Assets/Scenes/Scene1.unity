@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 509194170}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: grounded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15470,6 +15470,8 @@ MonoBehaviour:
   minCharge: 0
   slowdown: 0
   dashSound: {fileID: 1413548592}
+  midairJump: 0
+  cmidairJump: 0
 --- !u!50 &1413548587
 Rigidbody2D:
   serializedVersion: 4
