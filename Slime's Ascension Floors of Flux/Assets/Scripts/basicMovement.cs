@@ -41,8 +41,7 @@ public class basicMovement : MonoBehaviour
         }
 
     }
-
-
+ 
 
 
     public Vector2 Charging() {
