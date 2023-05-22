@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 591058715}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: grounded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
   minCharge: 0
   slowdown: 0
   dashSound: {fileID: 930351521}
-  midairJump: 0
+  midairJump: 10
   cmidairJump: 0
 --- !u!50 &930351516
 Rigidbody2D:
@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicmovement: {fileID: 930351515}
+  maxStamina: 50
   stamina: 50
 --- !u!82 &930351521
 AudioSource:
