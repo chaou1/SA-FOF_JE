@@ -9,6 +9,7 @@ TagManager:
   - checkpoint
   - weak
   - rooms
+  - roomSpawner
   layers:
   - Default
   - TransparentFX
