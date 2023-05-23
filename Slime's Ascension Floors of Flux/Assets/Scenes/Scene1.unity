@@ -15645,10 +15645,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbeb67424ebe14e43b234fc5fcfa1670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upRooms: []
-  rightRooms: []
-  downRooms: []
-  leftRooms: []
+  upRooms:
+  - {fileID: 8281561087712383980, guid: 2cd1fec27417eee4c9c56731580e0102, type: 3}
+  rightRooms:
+  - {fileID: 8221022937747067740, guid: 7a5f3e3d992d4f14c9afc6031906190b, type: 3}
+  downRooms:
+  - {fileID: 2512197638257261510, guid: 99ef19e53f60b454ea054c007b92caac, type: 3}
+  leftRooms:
+  - {fileID: 7820359735844955821, guid: e7e3bcf226750db43b4259f2e1bb7ca4, type: 3}
+  closedRooms: []
 --- !u!4 &964522075
 Transform:
   m_ObjectHideFlags: 0
