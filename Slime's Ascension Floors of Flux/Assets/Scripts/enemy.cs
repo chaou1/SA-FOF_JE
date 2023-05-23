@@ -21,6 +21,6 @@ public class enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+       
     }
 }
