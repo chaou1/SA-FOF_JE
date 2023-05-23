@@ -20,19 +20,26 @@ public class roomSpawner : MonoBehaviour
     {
         if (hasspawned == false) 
         {
-            switch (opening) 
+            switch (opening)
             {
                 case 0:
-
+                    randNumber = Random.Range(0, rooms.upRooms.Length);
+                    Instantiate(rooms.upRooms[randNumber],transform.position,rooms.upRooms[randNumber].transform.rotation);
                     break;
                 case 1:
+                    randNumber = Random.Range(0, rooms.rightRooms.Length);
+                    Instantiate(rooms.rightRooms[randNumber], transform.position, rooms.rightRooms[randNumber].transform.rotation);
                     break;
                 case 2:
+                    randNumber = Random.Range(0, rooms.downRooms.Length);
+                    Instantiate(rooms.downRooms[randNumber], transform.position, rooms.downRooms[randNumber].transform.rotation);
                     break;
                 case 3:
+                    randNumber = Random.Range(0, rooms.leftRooms.Length);
+                    Instantiate(rooms.leftRooms[randNumber], transform.position, rooms.leftRooms[randNumber].transform.rotation);
                     break;
             }
-        
+            hasspawned = true;
         }
 
     }
