@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class flypathMovement : MonoBehaviour
     
 {
     public enemy enemy;
@@ -12,21 +12,19 @@ public class movement : MonoBehaviour
     public float waitingTime;
 
     private bool cooldown= false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //enemy.transform.position = points[index].transform.position;
-    }
-
-    // Update is called once per frame
+ 
     void FixedUpdate()
     {
-        Movement();
+        //calls the moving fuction
+        FlypathMovement();
     }
-    public void Movement() {
+    public void FlypathMovement()
+ {
+        //movement to the point with the Indexedfdllkl
         enemy.transform.position = Vector2.MoveTowards(enemy.transform.position,points[index].transform.position, speed*Time.deltaTime );
+        //moving to next point
         if (enemy.transform.position == points[index].transform.position && cooldown==false) {
-            
+            //the wait inbetween movements
             StartCoroutine(Stop());
             cooldown = true;
         }

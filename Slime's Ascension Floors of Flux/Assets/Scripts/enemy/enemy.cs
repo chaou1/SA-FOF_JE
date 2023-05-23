@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public GameObject weakpoint;
+    public bool flying;
+    public bool walking;
 
     void Start()
     {
@@ -18,7 +20,6 @@ public class enemy : MonoBehaviour
     }
 
     public void Kill() {
-
         Destroy(this.gameObject);
     }
 }

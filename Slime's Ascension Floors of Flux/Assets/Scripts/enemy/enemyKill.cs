@@ -6,6 +6,7 @@ public class enemyKill : MonoBehaviour
 
 {
     public enemy enemy;
+    public GameObject pathing;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class enemyKill : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             enemy.Kill();
-        
+            Destroy(pathing);
         }
     }
 
