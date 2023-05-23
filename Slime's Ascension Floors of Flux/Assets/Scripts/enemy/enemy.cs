@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public GameObject weakpoint;
-    public bool test = false;
+
     void Start()
     {
         
@@ -18,7 +18,7 @@ public class enemy : MonoBehaviour
     }
 
     public void Kill() {
-        test = true;
+
         Destroy(this.gameObject);
     }
 }
