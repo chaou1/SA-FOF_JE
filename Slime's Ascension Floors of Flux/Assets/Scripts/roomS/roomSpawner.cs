@@ -7,7 +7,7 @@ public class roomSpawner : MonoBehaviour
 
 
     public int opening;
-    bool hasspawned;
+    public bool hasspawned = false;
     int randNumber;
     roomTemplate rooms;
     
@@ -16,7 +16,7 @@ public class roomSpawner : MonoBehaviour
     void Start()
     {
         rooms = GameObject.FindGameObjectWithTag("rooms").GetComponent<roomTemplate>();
-        Invoke("spawn", 0.1f);
+        Invoke("spawn", 0.2f);
     }
     void spawn() 
     {
@@ -39,6 +39,8 @@ public class roomSpawner : MonoBehaviour
                 case 3:
                     randNumber = Random.Range(0, rooms.leftRooms.Length);
                     Instantiate(rooms.leftRooms[randNumber], transform.position, rooms.leftRooms[randNumber].transform.rotation);
+                    break;
+                case 4:
                     break;
             }
             hasspawned = true;
