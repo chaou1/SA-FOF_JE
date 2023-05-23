@@ -10,6 +10,7 @@ public class roomSpawner : MonoBehaviour
     bool hasspawned;
     int randNumber;
     roomTemplate rooms;
+    
 
     // Start is called before the first frame update
     void Start()
