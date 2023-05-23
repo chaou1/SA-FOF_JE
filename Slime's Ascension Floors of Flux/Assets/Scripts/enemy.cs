@@ -5,22 +5,20 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public GameObject weakpoint;
+    public bool test = false;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
-       
+        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-       
+
+    public void Kill() {
+        test = true;
+        Destroy(this.gameObject);
     }
 }
