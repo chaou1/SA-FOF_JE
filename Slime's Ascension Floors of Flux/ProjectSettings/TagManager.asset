@@ -8,6 +8,7 @@ TagManager:
   - kill
   - grounded
   - checkpoint
+  - rooms
   layers:
   - Default
   - TransparentFX
