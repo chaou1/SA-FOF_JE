@@ -11,7 +11,7 @@ public class flypathMovement : MonoBehaviour
     public float speed;
     public float waitingTime;
 
-    private bool cooldown= false;
+    public bool cooldown= false;
  
     void FixedUpdate()
     {
