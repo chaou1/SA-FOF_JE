@@ -15500,6 +15500,7 @@ GameObject:
   - component: {fileID: 803119967}
   - component: {fileID: 803119966}
   - component: {fileID: 803119965}
+  - component: {fileID: 803119968}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: death
@@ -15517,7 +15518,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.10045576, y: 0.011098146}
@@ -15601,6 +15602,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &803119968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803119964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ca2ff17b49ebc4bbbc02dc46a3163a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weakpoint: {fileID: 1838954529}
 --- !u!1 &1109661273
 GameObject:
   m_ObjectHideFlags: 0
@@ -15838,7 +15852,7 @@ GameObject:
   - component: {fileID: 1413548593}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17424,7 +17438,7 @@ GameObject:
   - component: {fileID: 1838954531}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: kill
+  m_TagString: weak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17437,7 +17451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838954529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.402, y: 0, z: 0}
+  m_LocalPosition: {x: 0.473, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17454,7 +17468,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

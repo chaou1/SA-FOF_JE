@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - death
-  - kill
   - grounded
   - checkpoint
+  - weak
   layers:
   - Default
   - TransparentFX
