@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 357908171}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15615,6 +15615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weakpoint: {fileID: 1838954529}
+  flying: 0
+  walking: 0
 --- !u!1 &964522073
 GameObject:
   m_ObjectHideFlags: 0
@@ -17603,6 +17605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 803119968}
+  pathing: {fileID: 0}
 --- !u!1 &1845668288
 GameObject:
   m_ObjectHideFlags: 0
