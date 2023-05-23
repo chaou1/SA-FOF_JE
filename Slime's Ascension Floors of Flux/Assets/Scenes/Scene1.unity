@@ -15615,7 +15615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weakpoint: {fileID: 1838954529}
-  test: 0
 --- !u!1 &964522073
 GameObject:
   m_ObjectHideFlags: 0
