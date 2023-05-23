@@ -1,0 +1,18 @@
+Bucket list game:
+-map machen
+-scene transitions
+-sprites
+	-bg
+	-character
+	-foreground
+	-enemies
+
+-sounds/bgm
+	
+-npcs
+
+-SPRUNG/ZEITLUPE RESTRIKTIONEN
+
+-gegner(formidiable foes)
+-bosse
+
