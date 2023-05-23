@@ -23,10 +23,11 @@ public class basicMovement : MonoBehaviour
     public float cmidairJump;
     public float maxStamina = 40;
     public float stamina = 40;
-
+    private groundCheck gC;
     // Start is called before the first frame update
     void Start()
     {
+        gC = this.gameObject.GetComponentInChildren<groundCheck>();
         cmidairJump = midairJump;
         deltaTime = Time.deltaTime;
         Transform playerposition = player.transform;
@@ -47,7 +48,12 @@ public class basicMovement : MonoBehaviour
     }
  void Update()
     {
-
+        if (gC.isGrounded == true)
+        {
+            cmidairJump = midairJump;
+            stamina = maxStamina;
+            noStamina = false;
+        }
         if (cmidairJump != 0)
         {
             if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge)
@@ -107,16 +113,6 @@ public class basicMovement : MonoBehaviour
         
 
         return movement;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "grounded") 
-        {
-            cmidairJump = midairJump;
-            stamina = maxStamina;
-            noStamina = false;
-        }
-
     }
 
 

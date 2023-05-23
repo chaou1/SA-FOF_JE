@@ -7,6 +7,7 @@ TagManager:
   - death
   - kill
   - grounded
+  - checkpoint
   layers:
   - Default
   - TransparentFX
