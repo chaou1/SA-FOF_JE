@@ -60,5 +60,5 @@ crashlytics-build.properties
 game/UserSettings/Layouts/default-2021.dwlt
 Slime's Ascension Floors of Flux/UserSettings/Layouts/default-2021.dwlt
 *.dwlt
-*.dwlt
-*.dwlt
+.dwlt
+
