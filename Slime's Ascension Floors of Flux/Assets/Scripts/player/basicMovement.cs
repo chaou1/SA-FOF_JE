@@ -24,6 +24,10 @@ public class basicMovement : MonoBehaviour
     public float maxStamina = 40;
     public float stamina = 40;
     private groundCheck gC;
+
+
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +57,12 @@ public class basicMovement : MonoBehaviour
             cmidairJump = midairJump;
             stamina = maxStamina;
             noStamina = false;
+            animator.SetBool("idle",true);
+        }
+        if (gC.isGrounded == false)
+        {
+            animator.SetBool("idle", false);
+
         }
         if (cmidairJump != 0)
         {
@@ -67,6 +77,8 @@ public class basicMovement : MonoBehaviour
             }
             if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
             {
+                animator.Play("launch");
+                
                 rb.velocity = new Vector2(movement.x, rb.velocity.y);
                 movement.x = 0;
                 dashSound.Play();
@@ -79,11 +91,13 @@ public class basicMovement : MonoBehaviour
             Time.timeScale = slowmotionFactor;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
             slowdown = true;
+            animator.SetBool("charge", true);
         }
         else {
             Time.timeScale = 1;
             Time.fixedDeltaTime = deltaTime;
             slowdown = false;
+            animator.SetBool("charge", false);
         }
     }
 
@@ -93,6 +107,7 @@ public class basicMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.W)& movement.y<= maxCharge)
             {
                 movement.y = movement.y + chargeY;
+
                 
             }
             if (Input.GetKey(KeyCode.S) & movement.y >= -maxCharge)
@@ -103,12 +118,15 @@ public class basicMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.A) & movement.x >= -maxCharge)
             {
                 movement.x = movement.x  - chargeX;
-                
+                animator.SetBool("left", true);   
+
+
         }
             if (Input.GetKey(KeyCode.D) & movement.x <= maxCharge)
             {
                 movement.x = movement.x + chargeX;
-               
+                animator.SetBool("left", false);
+
         }
         
 
