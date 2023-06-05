@@ -20488,6 +20488,7 @@ GameObject:
   - component: {fileID: 2127392877}
   - component: {fileID: 2127392879}
   - component: {fileID: 2127392878}
+  - component: {fileID: 2127392880}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -20522,7 +20523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d045137360586914ea90f09832a136a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLines: []
+  textLines:
+  - 
+  - 
+  npc: []
   DialogC: {fileID: 0}
   cText: {fileID: 0}
 --- !u!212 &2127392879
@@ -20577,6 +20581,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2127392880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127392876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88052c267686eff41b799a16f874733c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueName: Hi
+  sentences:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1001 &1795115544309819050
 PrefabInstance:
   m_ObjectHideFlags: 0

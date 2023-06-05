@@ -8,6 +8,9 @@ public class Textengine : MonoBehaviour
 {
    
     public string[] textLines;
+   
+    public Dialogue[] npc;
+   
     bool inrange;
     int counter;
     int howManyTimes;
