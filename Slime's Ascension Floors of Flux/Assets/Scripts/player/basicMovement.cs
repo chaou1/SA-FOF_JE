@@ -64,9 +64,8 @@ public class basicMovement : MonoBehaviour
             animator.SetBool("idle", false);
 
         }
-        if (cmidairJump != 0)
-        {
-            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge)
+        
+            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) & Mathf.Abs(movement.y) >= minCharge && cmidairJump != 0)
             {
 
                 rb.velocity = new Vector2(rb.velocity.x, movement.y);
@@ -75,7 +74,7 @@ public class basicMovement : MonoBehaviour
                 cmidairJump--;
 
             }
-            if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge)
+            if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) & Mathf.Abs(movement.x) >= minCharge && cmidairJump != 0)
             {
                 animator.Play("launch");
                 
@@ -83,7 +82,7 @@ public class basicMovement : MonoBehaviour
                 movement.x = 0;
                 dashSound.Play();
                 cmidairJump--;
-            }
+            
         }
         //Slow Motion
         if (Input.GetKey(KeyCode.Space) & noStamina == false)
@@ -104,25 +103,25 @@ public class basicMovement : MonoBehaviour
     //Charging the Movement
     public Vector2 Charging() {
 
-            if (Input.GetKey(KeyCode.W)& movement.y<= maxCharge)
+            if (Input.GetKey(KeyCode.W)& movement.y<= maxCharge && cmidairJump != 0)
             {
                 movement.y = movement.y + chargeY;
 
                 
             }
-            if (Input.GetKey(KeyCode.S) & movement.y >= -maxCharge)
+            if (Input.GetKey(KeyCode.S) & movement.y >= -maxCharge && cmidairJump != 0)
             {
                 movement.y = movement.y - chargeY;
                 
         }
-            if (Input.GetKey(KeyCode.A) & movement.x >= -maxCharge)
+            if (Input.GetKey(KeyCode.A) & movement.x >= -maxCharge && cmidairJump != 0)
             {
                 movement.x = movement.x  - chargeX;
                 animator.SetBool("left", true);   
 
 
         }
-            if (Input.GetKey(KeyCode.D) & movement.x <= maxCharge)
+            if (Input.GetKey(KeyCode.D) & movement.x <= maxCharge && cmidairJump != 0)
             {
                 movement.x = movement.x + chargeX;
                 animator.SetBool("left", false);
